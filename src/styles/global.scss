@@ -1,0 +1,113 @@
+:root {
+  --tt-base: 10;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-primary: #ff5f7e;
+  --color-secondary: #1a4a67;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-body: "Lato", "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  // background: rgb(0 100 0 / 0.1) !important;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: var(--font-family-body);
+  word-wrap: break-word;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// &&&&&&&&&&&&&&&
+//  Typetura
+// &&&&&&&&&&&&&&&
+
+.heading-medium,
+.heading-regular,
+.heading-small {
+  --tt-ease: ease-out;
+  --tt-max: 1400;
+  font-family: var(--font-family-heading);
+}
+
+.heading-medium {
+  font-weight: 600;
+  --tt-key: heading-medium;
+}
+
+.heading-regular {
+  font-weight: 500;
+  --tt-key: heading-regular;
+}
+
+.heading-small {
+  font-weight: 400;
+  --tt-key: heading-small;
+}
+
+.paragraph {
+  font-weight: 400;
+  line-height: 150%;
+  font-family: var(--font-family-body);
+  font-size: 1.8rem;
+}
+
+.btn {
+  font-family: var(--font-family-body);
+  font-size: 1.5rem;
+}
+
+.btn-secondary-filled {
+  @extend .btn;
+  @include u_button(var(--color-light), var(--color-secondary), var(--color-secondary));
+  padding: 1rem 3rem;
+}
+
+.btn-primary-outline {
+  @extend .btn;
+  @include u_button(var(--color-primary), var(--color-light), var(--color-primary));
+  padding: 1rem 3rem;
+}
+
+@keyframes heading-medium {
+  0% {
+    font-size: 1.8rem;
+  }
+  100% {
+    font-size: 3.6rem;
+  }
+}
+
+@keyframes heading-regular {
+  0% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 3rem;
+  }
+}
+
+@keyframes heading-small {
+  0% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 2.5rem;
+  }
+}
