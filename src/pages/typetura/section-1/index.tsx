@@ -16,7 +16,9 @@ export function Section1(props) {
       <h1 className="heading-medium">Heading Medium</h1>
       <h2 className="heading-regular">Heading Regular</h2>
       <h3 className="heading-small">Heading Small</h3>
-      <h4 className="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi accusamus distinctio consequuntur sequi!</h4>
+      <p className="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi accusamus distinctio consequuntur sequi!</p>
+      <p className="paragraph-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi accusamus distinctio consequuntur sequi!</p>
+
       <button className="btn-secondary-filled">Lorem Ipsum</button>
       <button className="btn-primary-outline">Lorem Ipsum</button>
 

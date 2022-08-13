@@ -4,6 +4,7 @@
   --color-light: #ffffff;
   --color-primary: #ff5f7e;
   --color-secondary: #1a4a67;
+  --color-paragraph: #555555;
   --font-family-heading: "Poppins", sans-serif;
   --font-family-body: "Lato", "Poppins", sans-serif;
 }
@@ -12,7 +13,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  // background: rgb(0 100 0 / 0.1) !important;
+  background: rgb(0 100 0 / 0.1) !important;
 }
 
 ::-webkit-scrollbar {
@@ -66,6 +67,13 @@ ul {
   line-height: 150%;
   font-family: var(--font-family-body);
   font-size: 1.8rem;
+  color: var(--color-paragraph);
+}
+
+.paragraph-light {
+  @extend .paragraph;
+  color: var(--color-light);
+  opacity: 0.75;
 }
 
 .btn {
