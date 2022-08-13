@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Section1 } from '../../pages/typetura/section-1';
+import { Section01 } from '../../pages/rhinoplasty/section-01';
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Section1 />} />
+        <Route path="/" element={<Section01 />} />
       </Routes>
     </BrowserRouter>
   );
