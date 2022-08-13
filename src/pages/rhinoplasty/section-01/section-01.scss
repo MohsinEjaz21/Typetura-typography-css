@@ -1,12 +1,30 @@
 .section-01 {
+  --color-bg-image: #e3e3e3;
+}
+
+.section-01 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: var(--color-secondary);
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
   .block1 {
+    padding: 50px 0;
     display: grid;
     align-content: center;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
+
+    @include md {
+      width: 90%;
+    }
+
+    .heading-small {
+      margin-bottom: 0.75rem;
+    }
 
     .heading-large {
       margin-bottom: 1.6rem;
@@ -15,12 +33,26 @@
     .btn-secondary-2 {
       max-width: 253px;
       margin-top: 3rem;
+      @include xs {
+        max-width: none;
+      }
     }
   }
 
   .block2 {
+    max-height: 629px;
+    max-width: 753px;
+
+    @include md {
+      max-width: none;
+      max-height: 335.05px;
+    }
+
     .image {
-      max-height: 100%;
+      @include md {
+        object-fit: contain;
+        background: var(--color-bg-image);
+      }
       // height: 80% !important;
     }
   }

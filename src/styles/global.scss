@@ -37,6 +37,7 @@ ul {
 
 .image {
   height: 100%;
+  width: 100%;
 }
 // &&&&&&&&&&&&&&&
 //  Typetura
@@ -68,6 +69,7 @@ ul {
 .heading-small {
   font-weight: 400;
   --tt-key: heading-small;
+  line-height: 150%;
 }
 
 .paragraph {
@@ -136,8 +138,9 @@ ul {
 
 @keyframes heading-small {
   0% {
-    font-size: 2rem;
+    font-size: 1.33rem;
   }
+
   100% {
     font-size: 2.5rem;
   }
