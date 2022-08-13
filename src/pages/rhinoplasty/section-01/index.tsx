@@ -7,27 +7,26 @@ const data = {
   subTitle: 'Rhinoplasty (nose)',
   description: <>
     A rhinoplasty procedure reshapes, corrects or <span className="color-primary">reconstructs the nose</span> to achieve more aesthetically pleasing results and to
-    <span className="color-primary"> enhance ones' physical appearance.</span> <br /> <span className="spacer" /> Not the right nose? <span className="color-primary">Lets fix it.</span>
+    <span className="color-primary"> enhance ones' physical appearance.</span> <br /> <span className="line-break" /> Not the right nose? <span className="color-primary">Lets fix it.</span>
   </>,
   btnText: 'Book Online Consultation',
 
 }
 
 export function Section01(props) {
-  const windowSize = useWindowSize();
-  const isSmall = windowSize.innerWidth < 1144;
+  const isSmall = useWindowSize().innerWidth < 1144;
 
   return (
     <div className="section-01">
       <div className="block1">
-        <h2 className="title">{data.title}</h2>
-        <h1 className="subtitle">{data.subTitle}</h1>
-        <p className="description">{data.description}</p>
-        <button className="btn">{data.btnText}</button>
+        <h2 className="heading-small color-primary">{data.title}</h2>
+        <h1 className="heading-large color-white">{data.subTitle}</h1>
+        <p className="paragraph-light">{data.description}</p>
+        <button className="btn btn-secondary-2">{data.btnText}</button>
       </div>
       <div className="block2">
-        {isSmall && <img className="image" src={data.imageMobile} />}
-        {!isSmall && <img className="image" src={data.image} />}
+        {isSmall && <img className="image" loading="lazy" src={data.imageMobile} />}
+        {!isSmall && <img className="image" loading="lazy" src={data.image} />}
       </div>
     </div>
   );

@@ -1,2 +1,27 @@
 .section-01 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-secondary);
+  .block1 {
+    display: grid;
+    align-content: center;
+    width: 80%;
+    margin: 0 auto;
+
+    .heading-large {
+      margin-bottom: 1.6rem;
+    }
+
+    .btn-secondary-2 {
+      max-width: 253px;
+      margin-top: 3rem;
+    }
+  }
+
+  .block2 {
+    .image {
+      max-height: 100%;
+      // height: 80% !important;
+    }
+  }
 }

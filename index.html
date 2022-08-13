@@ -7,13 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script src="./scripts/typetura.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 
   </head>
 
   <body>
     <div id="root"></div>
-    <div id="modals-portal"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+
+  <script>
+
+    party.confetti(runButton, {
+      count: party.variation.range(20, 40)
+    });
+
+  </script>
 
 </html>
