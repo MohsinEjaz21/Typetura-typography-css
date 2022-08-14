@@ -1,17 +1,13 @@
-.section-02 {
-  --color-bg-image: #fbabaa;
+.section-03 {
+  --color-bg-image: #e3e3e3;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // background: var(--color-secondary);
-
   @include md {
     grid-template-columns: 1fr;
   }
 
   .block-01 {
-    display: grid;
-    align-content: center;
     width: 80%;
     margin: 0 auto;
 
@@ -22,38 +18,37 @@
     @include xs {
       width: 90%;
     }
-
     .text1 {
       @extend .h-small, .color-primary;
       margin-bottom: 0.8rem;
     }
+
     .text2 {
       @extend .h-medium;
       margin-bottom: 1.6rem;
     }
+
     .text3 {
       @extend .paragraph;
       margin-bottom: 6.4rem;
     }
+
     .btn {
       @extend .btn-secondary-1;
     }
   }
 
   .block-02 {
-    max-height: 872px;
-    max-width: 604px;
     margin: 0 auto;
-    object-fit: contain;
+    max-height: 797px;
+    max-width: 605px;
+    background: var(--color-bg-image);
 
     @include md {
-      order: 1;
+      max-height: 500px;
       max-width: none;
-      max-height: 450px;
       margin: 0;
-      background: var(--color-bg-image);
     }
-
     .image {
       object-fit: contain;
     }

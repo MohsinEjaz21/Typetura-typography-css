@@ -39,34 +39,41 @@ ul {
   height: 100%;
   width: 100%;
 }
+
+section {
+  margin-bottom: 5rem !important;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 // &&&&&&&&&&&&&&&
 //  Typetura
 // &&&&&&&&&&&&&&&
-
-.heading-medium,
-.heading-regular,
-.heading-small {
+.h-large,
+.h-medium,
+.h-regular,
+.h-small {
   --tt-ease: ease-out;
-  --tt-max: 1400;
+  --tt-max: 1440;
   font-family: var(--font-family-heading);
 }
 
-.heading-large {
+.h-large {
   font-weight: 600;
   --tt-key: heading-large;
 }
 
-.heading-medium {
+.h-medium {
   font-weight: 600;
   --tt-key: heading-medium;
 }
 
-.heading-regular {
+.h-regular {
   font-weight: 500;
   --tt-key: heading-regular;
 }
 
-.heading-small {
+.h-small {
   font-weight: 400;
   --tt-key: heading-small;
   line-height: 150%;
@@ -89,6 +96,10 @@ ul {
 .btn {
   font-family: var(--font-family-body);
   font-size: 1.5rem;
+  max-width: 253px;
+  @include xs {
+    max-width: none;
+  }
 }
 
 .btn-secondary-1 {
@@ -110,6 +121,9 @@ ul {
   0% {
     font-size: 2.5rem;
   }
+  70% {
+    font-size: 3rem;
+  }
   100% {
     font-size: 4.8rem;
   }
@@ -117,7 +131,10 @@ ul {
 
 @keyframes heading-medium {
   0% {
-    font-size: 1.8rem;
+    font-size: 2.05rem;
+  }
+  70% {
+    font-size: 2.8rem;
   }
   100% {
     font-size: 3.6rem;
@@ -128,6 +145,9 @@ ul {
   0% {
     font-size: 2rem;
   }
+  70% {
+    font-size: 2.8rem;
+  }
   100% {
     font-size: 3rem;
   }
@@ -137,7 +157,9 @@ ul {
   0% {
     font-size: 1.33rem;
   }
-
+  70% {
+    font-size: 1.8rem;
+  }
   100% {
     font-size: 2.5rem;
   }

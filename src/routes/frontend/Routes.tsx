@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Rhinoplasty from '../../pages/rhinoplasty';
-import { Section01 } from '../../pages/rhinoplasty/section-01';
+import { Section03 } from '../../pages/rhinoplasty/section-03';
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Section01 />} />
+        <Route path="/" element={<Section03 />} />
         <Route path="/rhino" element={<Rhinoplasty />} />
 
       </Routes>

@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: var(--color-secondary);
-
+  @extend .fill-secondary;
   @include md {
     grid-template-columns: 1fr;
   }
@@ -18,15 +18,15 @@
     width: 70%;
     margin: 0 auto;
 
-    @include md {
+    @include xs {
       width: 90%;
     }
 
-    .heading-small {
+    .h-small {
       margin-bottom: 0.75rem;
     }
 
-    .heading-large {
+    .h-large {
       margin-bottom: 1.6rem;
     }
 
@@ -45,7 +45,7 @@
 
     @include md {
       max-width: none;
-      max-height: 335.05px;
+      max-height: 450px;
     }
 
     .image {

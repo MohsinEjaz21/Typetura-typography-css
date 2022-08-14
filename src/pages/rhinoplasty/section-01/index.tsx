@@ -17,10 +17,10 @@ export function Section01(props) {
   const isSmall = useWindowSize().innerWidth < 1144;
 
   return (
-    <div className="section-01">
+    <section className="section-01">
       <div className="block1">
-        <h2 className="heading-small color-primary">{data.title}</h2>
-        <h1 className="heading-large color-white">{data.subTitle}</h1>
+        <h2 className="h-small color-primary">{data.title}</h2>
+        <h1 className="h-large color-white">{data.subTitle}</h1>
         <p className="paragraph-light">{data.description}</p>
         <button className="btn btn-secondary-2">{data.btnText}</button>
       </div>
@@ -28,7 +28,7 @@ export function Section01(props) {
         {isSmall && <img className="image" loading="lazy" src={data.imageMobile} />}
         {!isSmall && <img className="image" loading="lazy" src={data.image} />}
       </div>
-    </div>
+    </section>
   );
 }
 
