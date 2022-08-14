@@ -40,10 +40,13 @@ ul {
   width: 100%;
 }
 
-section {
-  margin-bottom: 5rem !important;
+#root {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+section {
+  margin-bottom: 5rem !important;
 }
 
 .u-block-1 {

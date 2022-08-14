@@ -89,7 +89,7 @@ export function Section04(props) {
 
 
   return (
-    <div className="section-04">
+    <section className="section-04">
       <div className="block-1">
         <div className="text1">{data.text1}</div>
         <div className="text2">{data.text2}</div>
@@ -106,7 +106,7 @@ export function Section04(props) {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
