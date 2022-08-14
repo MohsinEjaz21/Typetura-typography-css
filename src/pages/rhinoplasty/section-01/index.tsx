@@ -1,8 +1,8 @@
 import useWindowSize from '@rehooks/window-size';
 
 const data = {
-  image: "assets/images/sec01/img_2.png",
-  imageMobile: "assets/images/sec01/img_1.png",
+  image: "assets/rhinoplasty/sec01/img_2.png",
+  imageMobile: "assets/rhinoplasty/sec01/img_1.png",
   title: 'Looking Beautiful isn’t Luck, It’s a Decision',
   subTitle: 'Rhinoplasty (nose)',
   description: <>

@@ -11,7 +11,7 @@ const data = {
     <div className="line-break" />Anyone older than 18 years old with good health can be a candidate. In special cases, ones younger than 18 can also be considered.
     <div className="line-break" />To be informed about your specific case in detail, you should have a consultation with a plastic surgeon.
   </>,
-  image: "assets/images/sec03/img_2.png",
+  image: "assets/rhinoplasty/sec03/img_2.png",
 }
 
 export function Section03(props) {

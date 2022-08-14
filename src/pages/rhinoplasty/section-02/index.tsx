@@ -6,8 +6,8 @@ const data = {
   text3: <> Using rhinoplasty, the size and the shape of the nose may be changed. It’s also possible to improve breathing.
     <div className="line-break" />The motivation may be to treat a structural problem caused by an injury, to correct a birth defect…
     <div className="line-break" />Perhaps you may just want to have a more aesthetical appearance.</>,
-  image: "assets/images/sec02/img_1.png",
-  imageMobile: "assets/images/sec02/img_2.png",
+  image: "assets/rhinoplasty/sec02/img_1.png",
+  imageMobile: "assets/rhinoplasty/sec02/img_2.png",
 
 }
 
