@@ -15,12 +15,9 @@
     padding: 50px 0;
     display: grid;
     align-content: center;
-    width: 70%;
     margin: 0 auto;
 
-    @include xs {
-      width: 90%;
-    }
+    @include u-block(70%);
 
     .h-small {
       margin-bottom: 0.75rem;

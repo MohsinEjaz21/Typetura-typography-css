@@ -18,7 +18,7 @@ const data = {
     {
       image: "assets/rhinoplasty/sec04/img_1.svg",
       text1: 'Aesthetical Outcomes',
-      text2: 'Rhinoplasty can address all kinds of aesthetical concerns about nose.',
+      text2: <>Rhinoplasty can address all kinds of aesthetical concerns about nose.</>,
       list: [
         {
           icon: "assets/icons/icon_1.svg",
@@ -41,7 +41,7 @@ const data = {
     {
       image: "assets/rhinoplasty/sec04/img_3.svg",
       text1: 'Health-related Outcomes',
-      text2: `The health-related outcome of rhinoplasty is related to breathing.\nIf your septum is crooked or bent, you may be experiencing breathing problems.`,
+      text2: <>The health-related outcome of rhinoplasty is related to breathing. <div className="line-break" /> If your septum is crooked or bent, you may be experiencing breathing problems.</>,
 
 
       list: [
@@ -58,7 +58,7 @@ const data = {
     {
       image: "assets/rhinoplasty/sec04/img_2.svg",
       text1: 'Psychological Outcomes',
-      text2: <> <span className="color-primary">Not being happy</span> with your nose can lead to serious psychological distress..< br /> If your septum is crooked or bent, you may be experiencing breathing problems.</>,
+      text2: <> <span className="color-primary">Not being happy</span> with your nose can lead to serious psychological distress..<div className="line-break" /> If your septum is crooked or bent, you may be experiencing breathing problems.</>,
       list: [
         {
           icon: "assets/icons/icon_1.svg",
@@ -99,7 +99,7 @@ export function Section04(props) {
           <div className="content">
             <img className="image" src={elem.image} />
             <div className="text1">{elem.text1}</div>
-            <div className="text2 whitespace_prewrap">{elem.text2}</div>
+            <div className="text2">{elem.text2}</div>
             <ul className="ul">
               {elem?.list?.map(e => <ForeachElement text={e.text} icon={e.icon} />)}
             </ul>

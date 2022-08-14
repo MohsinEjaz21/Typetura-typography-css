@@ -8,16 +8,13 @@
   }
 
   .block-01 {
-    width: 80%;
     margin: 0 auto;
+    @extend .u-block-1;
 
     @include md {
       padding: 50px 0;
     }
 
-    @include xs {
-      width: 90%;
-    }
     .text1 {
       @extend .h-small, .color-primary;
       margin-bottom: 0.8rem;

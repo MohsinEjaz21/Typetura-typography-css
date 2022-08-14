@@ -12,15 +12,12 @@
   .block-01 {
     display: grid;
     align-content: center;
-    width: 80%;
     margin: 0 auto;
+
+    @include u-block(70%);
 
     @include md {
       padding: 50px 0;
-    }
-
-    @include xs {
-      width: 90%;
     }
 
     .text1 {

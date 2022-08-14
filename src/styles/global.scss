@@ -46,6 +46,17 @@ section {
   margin: 0 auto;
 }
 
+.u-block-1 {
+  width: 70%;
+
+  @include xs {
+    width: 90%;
+  }
+  @include tn {
+    width: 95%;
+  }
+}
+
 // &&&&&&&&&&&&&&&
 //  Typetura
 // &&&&&&&&&&&&&&&

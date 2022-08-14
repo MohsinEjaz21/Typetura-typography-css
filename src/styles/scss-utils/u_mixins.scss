@@ -12,3 +12,14 @@
     padding: 1.5rem 2rem;
   }
 }
+
+@mixin u_block($width) {
+  width: $width;
+
+  @include xs {
+    width: 90%;
+  }
+  @include tn {
+    width: 95%;
+  }
+}
