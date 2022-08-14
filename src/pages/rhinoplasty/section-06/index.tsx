@@ -1,7 +1,7 @@
 import useWindowSize from "@rehooks/window-size";
 
 const data = {
-  illustration: "assets/icons/icons_4.svg",
+  illustration: "assets/icons/icon_4.svg",
   listOfElements: [
     {
       title: 'The First Week',
