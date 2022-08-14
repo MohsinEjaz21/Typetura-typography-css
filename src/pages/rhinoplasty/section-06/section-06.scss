@@ -1,0 +1,51 @@
+.section-06 {
+  position: relative;
+  .block-1 {
+    .illustration {
+      position: absolute;
+      right: 0;
+      top: -7rem;
+      @include responsive-prop("width", 20px, 80px);
+      @include md {
+        display: none;
+      }
+    }
+
+    max-width: 762px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4.8rem;
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 1.6rem;
+    }
+    .text2 {
+      @extend .h-medium;
+      margin-bottom: 1.6rem;
+    }
+  }
+  .block-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @include md {
+      grid-template-columns: 1fr;
+    }
+    .content {
+      @include u-block(70%);
+      margin: 0 auto;
+
+      @include md {
+        margin: 50px auto;
+      }
+
+      .heading {
+        @extend .h-small;
+        margin-bottom: 1.6rem;
+      }
+      .description {
+        @extend .paragraph;
+      }
+    }
+  }
+}

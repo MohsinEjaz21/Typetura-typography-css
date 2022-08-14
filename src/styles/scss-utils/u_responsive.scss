@@ -15,9 +15,6 @@
   $small-em: px-to-rem($min-width);
   $large-em: px-to-rem($max-width);
 
-  $min-width: $min-width;
-  $max-width: $max-width;
-
   $m-width: math.div(
     strip-unit($max-width) - strip-unit($min-width),
     strip-unit($break-stop) - strip-unit($break-start)

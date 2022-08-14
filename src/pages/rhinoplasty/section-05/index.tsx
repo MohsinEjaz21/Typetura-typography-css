@@ -19,22 +19,22 @@ const data = {
     <div className="line-break" />You will have a complete and detailed list of instructions.</>,
 
   text4: 'The Most Important Instructions',
-  image: "assets/rhinoplasty/sec05/img_1.png",
+  image: "assets/rhinoplasty/sec05/img_2.png",
   list: [
     {
-      icon: "assets/images/sec05/icons/icon_1.png",
+      icon: "assets/icons/icon_3.svg",
       text: "Do not smoke for at least 2 weeks after the surgery."
     },
     {
-      icon: "assets/images/sec05/icons/icon_1.png",
+      icon: "assets/icons/icon_3.svg",
       text: "Do not take non-steroidal anti-inflammatory medications after the surgery until your surgeon approves using them."
     },
     {
-      icon: "assets/images/sec05/icons/icon_1.png",
+      icon: "assets/icons/icon_3.svg",
       text: "Do not blow your nose."
     },
     {
-      icon: "assets/images/sec05/icons/icon_3.png",
+      icon: "assets/icons/icon_2.svg",
       text: "Avoid strenuous activities."
     }
 

@@ -40,13 +40,18 @@ ul {
   width: 100%;
 }
 
+.icon {
+  max-width: 2.4rem;
+  max-height: 2.4rem;
+}
+
 #root {
   max-width: 1440px;
   margin: 0 auto;
 }
 
 section {
-  margin-bottom: 5rem !important;
+  margin-bottom: 8rem !important;
 }
 
 .u-block-1 {
