@@ -125,19 +125,19 @@ export function Section09(props) {
   const handleNext = () => {
     if (currentSlide < data.items.length - 1) {
       setCurrentSlide(currentSlide => currentSlide + 1);
-      scrollXToElement(currentSlide);
+      scrollX(currentSlide, (a, b) => a + b);
     }
   }
 
   const handlePrev = () => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide => currentSlide - 1);
-      scrollXToElement(currentSlide);
+      scrollX(currentSlide, (a, b) => a - b);
 
     }
   }
 
-  const scrollXToElement = (index: number) => {
+  const scrollX = (index: number, accumulator) => {
     const foreachEl = document.querySelector(`.item:nth-child(${index + 1})`);
     const scrollEl = document.querySelector(`.items`);
     let size = foreachEl?.clientWidth;
@@ -146,14 +146,12 @@ export function Section09(props) {
 
     if (scrollEl && size) {
       gsap.to(scrollEl, {
-        scrollLeft: scrollEl.scrollLeft + size + columnGapPx,
+        scrollLeft: accumulator(scrollEl.scrollLeft, (size + columnGapPx)),
         duration: 1,
         ease: "power4.out"
       });
     }
   }
-
-
 
   return (
     <section className="section-09">
