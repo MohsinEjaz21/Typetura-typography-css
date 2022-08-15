@@ -154,11 +154,10 @@ export function Section09(props) {
     // console.log(e.target.scrollLeft);
     // get current scrolled element
     const scrollEl: any = document.querySelector(`.items`);
-
     // get current item from scroll position of items
     if (scrollEl) {
       const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
-      console.log(currentItem);
+      //console.log(currentItem);
       setCurrentSlide(currentItem);
     }
   }
