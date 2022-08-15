@@ -140,25 +140,17 @@ export function Section09(props) {
   const scrollXToElement = (index: number) => {
     const foreachEl = document.querySelector(`.item:nth-child(${index + 1})`);
     const scrollEl = document.querySelector(`.items`);
-    // let size = screenSize;
     let size = foreachEl?.clientWidth;
-    let gap = 16;
+    let columnGapPx = 16;
     console.log({ screenSize: screenSize, foreachElSize: foreachEl?.clientWidth, scrollLeft: scrollEl?.scrollLeft });
 
     if (scrollEl && size) {
-      // el.scrollLeft = index * el.clientWidth;
       gsap.to(scrollEl, {
-        scrollLeft: scrollEl.scrollLeft + size + gap,
+        scrollLeft: scrollEl.scrollLeft + size + columnGapPx,
         duration: 1,
         ease: "power4.out"
       });
-
-      // el.scrollLeft += windowSize.innerWidth;
     }
-
-    // scrollLeft using gsap
-
-
   }
 
 
