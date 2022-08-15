@@ -151,7 +151,7 @@ export function Section09(props) {
   }
 
   const onScrollItems = (e) => {
-    console.log(e.target.scrollLeft);
+    // console.log(e.target.scrollLeft);
     // get current scrolled element
     const scrollEl: any = document.querySelector(`.items`);
 
