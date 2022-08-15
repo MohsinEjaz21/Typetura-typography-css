@@ -18,23 +18,25 @@
     @include u-block(90%);
     margin: 0 auto;
 
+    @include md {
+      width: 100%;
+
+      .item:nth-of-type(1) {
+        // margin-left: -74%;
+      }
+    }
+
     .items {
+      overflow-x: scroll;
       display: grid;
       gap: 1.6rem;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 
       @include md {
-        overflow-x: hidden;
+        // display: flex;
         grid-auto-flow: column;
-        grid-auto-columns: 85%;
-        grid-template-columns: 85% 75% 85%;
-        grid-template-columns: none;
-        // margin: auto;
-        // margin-left: -125%;
+        grid-template-columns: repeat(12, minmax(80%, 1fr));
       }
-      // @include xxs {
-      //   grid-template-columns: 1fr;
-      // }
     }
 
     .item {
@@ -42,11 +44,9 @@
       row-gap: 0.5rem;
       grid-template-rows: 80px auto 1fr;
 
-      &.prev {
-      }
-
       @include md {
-        // max-height: 320px;
+        min-width: 100%;
+        // margin: 0 20px;
       }
 
       .image {

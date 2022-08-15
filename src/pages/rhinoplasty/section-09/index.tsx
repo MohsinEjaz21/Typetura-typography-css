@@ -1,5 +1,5 @@
-import useWindowSize from "@rehooks/window-size";
-import { gsap } from "gsap";
+import { default as useWindowSize } from "@rehooks/window-size";
+import { gsap } from "gsap/all";
 import { useState } from "react";
 
 
@@ -105,8 +105,8 @@ function Item({ title, description, btnText, image, className = "" }) {
 
 export function Section09(props) {
 
-  const windowSize = useWindowSize();
-  const isMdScreen = windowSize.innerWidth < 991;
+  const screenSize = useWindowSize().innerWidth;
+  const isMdScreen = screenSize < 991;
   const [currentSlide, setCurrentSlide] = useState(0);
 
 
@@ -124,39 +124,44 @@ export function Section09(props) {
 
   const handleNext = () => {
     if (currentSlide < data.items.length - 1) {
-      slide85Percent('.block-02');
       setCurrentSlide(currentSlide => currentSlide + 1);
+      scrollXToElement(currentSlide);
     }
   }
 
   const handlePrev = () => {
     if (currentSlide > 0) {
-      slide85Percent('.block-02');
       setCurrentSlide(currentSlide => currentSlide - 1);
+      scrollXToElement(currentSlide);
+
     }
   }
 
-  const slide85Percent = (el: any) => {
-    gsap.fromTo(el, {
-      x: 1000
-    }, {
-      x: 0,
-      duration: 1,
-      ease: "power4.out"
-    });
+  const scrollXToElement = (index: number) => {
+    const foreachEl = document.querySelector(`.item:nth-child(${index + 1})`);
+    const scrollEl = document.querySelector(`.items`);
+    // let size = screenSize;
+    let size = foreachEl?.clientWidth;
+    let gap = 16;
+    console.log({ screenSize: screenSize, foreachElSize: foreachEl?.clientWidth, scrollLeft: scrollEl?.scrollLeft });
+
+    if (scrollEl && size) {
+      // el.scrollLeft = index * el.clientWidth;
+      gsap.to(scrollEl, {
+        scrollLeft: scrollEl.scrollLeft + size + gap,
+        duration: 1,
+        ease: "power4.out"
+      });
+
+      // el.scrollLeft += windowSize.innerWidth;
+    }
+
+    // scrollLeft using gsap
+
+
   }
 
-  const showWhichSlide: any = () => {
-    if (data?.items?.[currentSlide - 1] && data?.items?.[currentSlide + 1]) {
-      return "all"
-    }
-    if (data?.items?.[currentSlide - 1]) {
-      return "prev"
-    }
-    if (data?.items?.[currentSlide + 1]) {
-      return "next"
-    }
-  }
+
 
   return (
     <section className="section-09">
@@ -165,11 +170,11 @@ export function Section09(props) {
         <h1 className="text2">{data.subTitle}</h1>
       </div>
       <div className="block-02">
-        <div className={`items ${showWhichSlide()}`}>
-          {!isMdScreen && data?.items.map((item, index) => <Item key={index} {...item} />)}
-          {isMdScreen && data?.items?.[currentSlide - 1] && <Item className="prevSlide" {...data.items[currentSlide - 1]} />}
+        <div className="items">
+          {data?.items.map((item, index) => <Item key={index} {...item} />)}
+          {/* {isMdScreen && data?.items?.[currentSlide - 1] && <Item className="prevSlide" {...data.items[currentSlide - 1]} />}
           {isMdScreen && data?.items?.[currentSlide] && <Item className="currentSlide" {...data.items[currentSlide]} />}
-          {isMdScreen && data?.items?.[currentSlide + 1] && <Item className="nextSlide" {...data.items[currentSlide + 1]} />}
+          {isMdScreen && data?.items?.[currentSlide + 1] && <Item className="nextSlide" {...data.items[currentSlide + 1]} />} */}
         </div>
       </div>
       <div className="footer-btns">
