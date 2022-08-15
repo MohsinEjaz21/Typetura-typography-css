@@ -135,25 +135,40 @@ export function Section09(props) {
       setCurrentSlide(currentSlide => currentSlide + 1);
       scrollX(currentSlide, (a, b) => a + b);
     }
-  }, 500);
+  }, 300);
 
   const handlePrev = debounce(() => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide => currentSlide - 1);
       scrollX(currentSlide, (a, b) => a - b);
     }
-  }, 500);
+  }, 300);
+
+  function position(elem) {
+    var left = 0,
+      top = 0;
+
+    do {
+      left += elem.offsetLeft - elem.scrollLeft;
+      top += elem.offsetTop - elem.scrollTop;
+    } while (elem = elem.offsetParent);
+
+    return [left, top];
+  }
+
 
   const scrollX = (index: number, accumulator) => {
     const foreachEl = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
     const scrollEl = document.querySelector(`.items`);
     let size = foreachEl?.clientWidth;
     let columnGapPx = 16;
+
     console.log({
       screenSize: screenSize,
       foreachElSize: foreachEl?.clientWidth,
       scrollLeft: scrollEl?.scrollLeft,
-      index: index
+      index: index,
+      position: position(scrollEl),
     });
 
     if (scrollEl && size) {
