@@ -158,7 +158,7 @@ export function Section09(props) {
     // get current item from scroll position of items
     if (scrollEl) {
       const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
-      // console.log(currentItem);
+      console.log(currentItem);
       setCurrentSlide(currentItem);
     }
   }
@@ -172,8 +172,7 @@ export function Section09(props) {
       screenSize: screenSize,
       currElemSize: currElem?.clientWidth,
       scrollLeft: scrollEl?.scrollLeft,
-      index: index,
-      position: position(scrollEl),
+      index: index
     });
 
     if (scrollEl && size) {
