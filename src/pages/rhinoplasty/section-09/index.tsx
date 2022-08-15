@@ -107,22 +107,7 @@ function Item({ title, description, btnText, image, className = "", dataIndex })
 export function Section09(props) {
 
   const screenSize = useWindowSize().innerWidth;
-  const isMdScreen = screenSize < 991;
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const fadeInOutGsap = (el: any) => {
-    gsap.fromTo(el, {
-      opacity: 0,
-      y: -50
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power4.out"
-    });
-  }
-
-
 
   const handleNext = debounce(() => {
     if (currentSlide < data.items.length - 1) {
@@ -137,18 +122,6 @@ export function Section09(props) {
       scrollX(currentSlide, (a, b) => a - b);
     }
   }, 300);
-
-  function position(elem) {
-    var left = 0,
-      top = 0;
-
-    do {
-      left += elem.offsetLeft - elem.scrollLeft;
-      top += elem.offsetTop - elem.scrollTop;
-    } while (elem = elem.offsetParent);
-
-    return [left, top];
-  }
 
   const onScrollItems = (e) => {
     // console.log(e.target.scrollLeft);

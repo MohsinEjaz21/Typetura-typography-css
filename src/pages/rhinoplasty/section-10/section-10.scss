@@ -46,11 +46,35 @@
     }
   }
 
+  .footer-btns {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 4.8rem;
+    .btn {
+      border: none;
+      outline: none;
+    }
+
+    @include max {
+      display: none;
+    }
+
+    @include md {
+      justify-content: center;
+      display: flex;
+    }
+  }
+
   .content {
     width: 100%;
     justify-content: center;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 430px));
+
+    @include md {
+    }
   }
 }
