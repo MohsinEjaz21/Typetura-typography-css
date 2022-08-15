@@ -6,6 +6,7 @@ import { Section05 } from "./section-05";
 import { Section06 } from "./section-06";
 import { Section07 } from "./section-07";
 import { Section08 } from "./section-08";
+import { Section09 } from "./section-09";
 
 function Rhinoplasty() {
   return (
@@ -18,6 +19,7 @@ function Rhinoplasty() {
       <Section06 />
       <Section07 />
       <Section08 />
+      <Section09 />
 
     </>
   )

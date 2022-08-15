@@ -1,0 +1,93 @@
+.section-09 {
+  .block-01 {
+    // max-width: 762px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4.8rem;
+
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 0.8rem;
+    }
+    .text2 {
+      @extend .h-medium;
+    }
+  }
+
+  .block-02 {
+    @include u-block(90%);
+    margin: 0 auto;
+
+    .items {
+      display: grid;
+      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+      @include md {
+        overflow-x: hidden;
+        grid-auto-flow: column;
+        grid-auto-columns: 85%;
+        grid-template-columns: 85% 75% 85%;
+        grid-template-columns: none;
+        // margin: auto;
+        // margin-left: -125%;
+      }
+      // @include xxs {
+      //   grid-template-columns: 1fr;
+      // }
+    }
+
+    .item {
+      display: grid;
+      row-gap: 0.5rem;
+      grid-template-rows: 80px auto 1fr;
+
+      &.prev {
+      }
+
+      @include md {
+        // max-height: 320px;
+      }
+
+      .image {
+        max-width: 83.55px;
+        max-height: 80px;
+      }
+      .text1 {
+        @extend .h-small;
+        margin-bottom: 0.8rem;
+      }
+      .text2 {
+        @extend .paragraph;
+        margin-bottom: 2.5rem;
+      }
+      .btn {
+        @extend .btn-primary-1;
+        margin-bottom: 0.8rem;
+        max-width: none;
+        align-self: end;
+      }
+    }
+  }
+
+  .footer-btns {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 4.8rem;
+    .btn {
+      border: none;
+      outline: none;
+    }
+
+    @include max {
+      display: none;
+    }
+
+    @include md {
+      justify-content: center;
+      display: flex;
+    }
+  }
+}
