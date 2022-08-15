@@ -200,7 +200,7 @@ export function Section09(props) {
           <img src={currentSlide > 0 ? icons.prevIcon : icons.prevIconDisabled} alt="" />
         </button>
         <button className="btn btn-next" onClick={handleNext}>
-          <img src={currentSlide < data.items.length - 1 ? icons.nextIcon : icons.nextIconDisabled} alt="" />
+          <img src={currentSlide == data.items.length - 2 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
         </button>
       </div>
     </section >
