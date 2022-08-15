@@ -1,7 +1,7 @@
 import { default as useWindowSize } from "@rehooks/window-size";
 import { gsap } from "gsap/all";
 import { debounce } from "lodash";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const icons = {
@@ -91,9 +91,9 @@ const data = {
 }
 
 
-function Item({ title, description, btnText, image, className = "" }) {
+function Item({ title, description, btnText, image, className = "", dataIndex }) {
   return (
-    <div className={`item ${className}`}>
+    <div className={`item ${className}`} data-index={dataIndex}>
       <img className="image" src={image} alt="" />
       <h1 className="text1">{title}</h1>
       <p className="text2">{description}</p>
@@ -122,19 +122,7 @@ export function Section09(props) {
     });
   }
 
-  useEffect(() => {
-    // scrollX event subscription
-    console.log(position(document.querySelector(`.items`)));
 
-  }, [document.querySelector(`.items`) && window.scrollX]);
-
-
-  // const handleNext = () => {
-  //   if (currentSlide < data.items.length - 1) {
-  //     setCurrentSlide(currentSlide => currentSlide + 1);
-  //     scrollX(currentSlide, (a, b) => a + b);
-  //   }
-  // }
 
   const handleNext = debounce(() => {
     if (currentSlide < data.items.length - 1) {
@@ -162,16 +150,27 @@ export function Section09(props) {
     return [left, top];
   }
 
+  const onScrollItems = (e) => {
+    console.log(e.target.scrollLeft);
+    // get current scrolled element
+    const scrollEl: any = document.querySelector(`.items`);
 
+    // get current item from scroll position of items
+    if (scrollEl) {
+      const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
+      // console.log(currentItem);
+      setCurrentSlide(currentItem);
+    }
+  }
   const scrollX = (index: number, accumulator) => {
-    const foreachEl = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
+    const currElem = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
     const scrollEl = document.querySelector(`.items`);
-    let size = foreachEl?.clientWidth;
+    let size = currElem?.clientWidth;
     let columnGapPx = 16;
 
     console.log({
       screenSize: screenSize,
-      foreachElSize: foreachEl?.clientWidth,
+      currElemSize: currElem?.clientWidth,
       scrollLeft: scrollEl?.scrollLeft,
       index: index,
       position: position(scrollEl),
@@ -193,9 +192,8 @@ export function Section09(props) {
         <h1 className="text2">{data.subTitle}</h1>
       </div>
       <div className="block-02">
-        <div className="items">
-          {data?.items.map((item, index) => <Item key={index} {...item} />)}
-
+        <div className="items" onScroll={onScrollItems}>
+          {data?.items.map((item, index) => <Item dataIndex={index} {...item} />)}
         </div>
       </div>
       <div className="footer-btns">
