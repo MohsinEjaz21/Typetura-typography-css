@@ -75,6 +75,7 @@ export function Section10(props) {
 
   const screenSize = useWindowSize().innerWidth;
   const [currentSlide, setCurrentSlide] = useState(0);
+  let columnGapPx = 20;
 
   const handleNext = debounce(() => {
     if (currentSlide < data.items.length - 1) {
@@ -91,27 +92,32 @@ export function Section10(props) {
   }, 300);
 
   const onScrollItems = (e) => {
-    // console.log(e.target.scrollLeft);
+    // const scrollEl: any = document.querySelector(`.items`);
+    const scrollEl: any = document.querySelector(`.section-10 .item:nth-child(${currentSlide + 1})`);
+
+    console.log({
+      scrollLeft: e.target.scrollLeft,
+      offsetWidth: scrollEl.offsetWidth
+    });
     // get current scrolled element
-    const scrollEl: any = document.querySelector(`.items`);
     // get current item from scroll position of items
     if (scrollEl) {
-      const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
-      //console.log(currentItem);
+      const currentItem = Math.round(e.target.scrollLeft / (scrollEl.offsetWidth + columnGapPx)) + 1;
+      console.log(currentItem);
       setCurrentSlide(currentItem);
     }
   }
   const scrollX = (index: number, accumulator) => {
-    const currElem = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
-    const scrollEl = document.querySelector(`.items`);
+    const currElem = document.querySelector(`.section-10 .item:nth-child(${currentSlide + 1})`);
+    const scrollEl = document.querySelector(`.section-10 .items`);
     let size = currElem?.clientWidth;
-    let columnGapPx = 16;
 
     console.log({
       screenSize: screenSize,
-      currElemSize: currElem?.clientWidth,
+      size: currElem?.clientWidth,
       scrollLeft: scrollEl?.scrollLeft,
       index: index
+
     });
 
     if (scrollEl && size) {
@@ -124,20 +130,18 @@ export function Section10(props) {
   }
 
   return (
-    <section className="section-10 ">
+    <section className="section-10">
       <h3 className="text1"> Step by Step Experience for International Patients</h3>
       <h2 className="text2">Clineca believes that everything should be correct, detailed and satisfying.</h2>
-      <div className="content" onScroll={onScrollItems}>
-        {data.items.map(
-          (item, index) => (<Item key={index} {...item} />)
-        )}
+      <div className="items" onScroll={onScrollItems}>
+        {data.items.map((item, index) => <Item key={index} {...item} />)}
       </div>
       <div className="footer-btns">
         <button className="btn btn-prev" onClick={handlePrev}>
           <img src={currentSlide > 0 ? icons.prevIcon : icons.prevIconDisabled} alt="" />
         </button>
         <button className="btn btn-next" onClick={handleNext}>
-          <img src={currentSlide == data.items.length - 2 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
+          <img src={currentSlide == data.items.length - 1 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
         </button>
       </div>
     </section>

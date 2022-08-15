@@ -22,6 +22,18 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
+    @include md {
+      padding: 0 30px;
+    }
+
+    @include sm {
+      padding: 0 20px;
+    }
+
+    @include xs {
+      padding: 0 10px;
+    }
+
     .div1 {
       grid-area: 1 / 1 / 2 / 2;
       @extend .h-small, .color-primary;
@@ -67,14 +79,20 @@
     }
   }
 
-  .content {
+  .items {
     width: 100%;
-    justify-content: center;
     display: grid;
+    overflow-x: scroll;
+    justify-content: center;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(400px, 430px));
 
     @include md {
+      justify-content: start;
+      // overflow-x: scroll;
+      grid-auto-flow: column;
+      grid-auto-columns: 80%;
+      grid-template-columns: none;
     }
   }
 }

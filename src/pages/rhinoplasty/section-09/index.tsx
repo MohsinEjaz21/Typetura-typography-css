@@ -126,7 +126,7 @@ export function Section09(props) {
   const onScrollItems = (e) => {
     // console.log(e.target.scrollLeft);
     // get current scrolled element
-    const scrollEl: any = document.querySelector(`.items`);
+    const scrollEl: any = document.querySelector(`.section-09 .items`);
     // get current item from scroll position of items
     if (scrollEl) {
       const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
@@ -135,8 +135,8 @@ export function Section09(props) {
     }
   }
   const scrollX = (index: number, accumulator) => {
-    const currElem = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
-    const scrollEl = document.querySelector(`.items`);
+    const currElem = document.querySelector(`.section-09 .item:nth-child(${currentSlide + 1})`);
+    const scrollEl = document.querySelector(`.section-09 .items`);
     let size = currElem?.clientWidth;
     let columnGapPx = 16;
 
