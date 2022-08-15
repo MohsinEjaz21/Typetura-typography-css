@@ -1,5 +1,6 @@
 import { default as useWindowSize } from "@rehooks/window-size";
 import { gsap } from "gsap/all";
+import { debounce } from "lodash";
 import { useState } from "react";
 
 
@@ -109,7 +110,6 @@ export function Section09(props) {
   const isMdScreen = screenSize < 991;
   const [currentSlide, setCurrentSlide] = useState(0);
 
-
   const fadeInOutGsap = (el: any) => {
     gsap.fromTo(el, {
       opacity: 0,
@@ -122,27 +122,39 @@ export function Section09(props) {
     });
   }
 
-  const handleNext = () => {
+
+  // const handleNext = () => {
+  //   if (currentSlide < data.items.length - 1) {
+  //     setCurrentSlide(currentSlide => currentSlide + 1);
+  //     scrollX(currentSlide, (a, b) => a + b);
+  //   }
+  // }
+
+  const handleNext = debounce(() => {
     if (currentSlide < data.items.length - 1) {
       setCurrentSlide(currentSlide => currentSlide + 1);
       scrollX(currentSlide, (a, b) => a + b);
     }
-  }
+  }, 500);
 
-  const handlePrev = () => {
+  const handlePrev = debounce(() => {
     if (currentSlide > 0) {
       setCurrentSlide(currentSlide => currentSlide - 1);
       scrollX(currentSlide, (a, b) => a - b);
-
     }
-  }
+  }, 500);
 
   const scrollX = (index: number, accumulator) => {
-    const foreachEl = document.querySelector(`.item:nth-child(${index + 1})`);
+    const foreachEl = document.querySelector(`.item:nth-child(${currentSlide + 1})`);
     const scrollEl = document.querySelector(`.items`);
     let size = foreachEl?.clientWidth;
     let columnGapPx = 16;
-    console.log({ screenSize: screenSize, foreachElSize: foreachEl?.clientWidth, scrollLeft: scrollEl?.scrollLeft });
+    console.log({
+      screenSize: screenSize,
+      foreachElSize: foreachEl?.clientWidth,
+      scrollLeft: scrollEl?.scrollLeft,
+      index: index
+    });
 
     if (scrollEl && size) {
       gsap.to(scrollEl, {

@@ -33,9 +33,8 @@
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 
       @include md {
-        // display: flex;
         grid-auto-flow: column;
-        grid-template-columns: repeat(12, minmax(80%, 1fr));
+        grid-template-columns: repeat(12, minmax(90%, 1fr));
       }
     }
 
@@ -46,7 +45,15 @@
 
       @include md {
         min-width: 100%;
-        // margin: 0 20px;
+        padding: 0 30px;
+      }
+
+      @include sm {
+        padding: 0 20px;
+      }
+
+      @include xs {
+        padding: 0 10px;
       }
 
       .image {
