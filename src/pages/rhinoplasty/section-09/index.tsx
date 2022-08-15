@@ -1,7 +1,7 @@
 import { default as useWindowSize } from "@rehooks/window-size";
 import { gsap } from "gsap/all";
 import { debounce } from "lodash";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const icons = {
@@ -122,6 +122,12 @@ export function Section09(props) {
     });
   }
 
+  useEffect(() => {
+    // scrollX event subscription
+    console.log(position(document.querySelector(`.items`)));
+
+  }, [document.querySelector(`.items`) && window.scrollX]);
+
 
   // const handleNext = () => {
   //   if (currentSlide < data.items.length - 1) {
@@ -189,9 +195,7 @@ export function Section09(props) {
       <div className="block-02">
         <div className="items">
           {data?.items.map((item, index) => <Item key={index} {...item} />)}
-          {/* {isMdScreen && data?.items?.[currentSlide - 1] && <Item className="prevSlide" {...data.items[currentSlide - 1]} />}
-          {isMdScreen && data?.items?.[currentSlide] && <Item className="currentSlide" {...data.items[currentSlide]} />}
-          {isMdScreen && data?.items?.[currentSlide + 1] && <Item className="nextSlide" {...data.items[currentSlide + 1]} />} */}
+
         </div>
       </div>
       <div className="footer-btns">
@@ -234,3 +238,8 @@ export function Section09(props) {
 
 // }
 
+
+
+{/* {isMdScreen && data?.items?.[currentSlide - 1] && <Item className="prevSlide" {...data.items[currentSlide - 1]} />}
+          {isMdScreen && data?.items?.[currentSlide] && <Item className="currentSlide" {...data.items[currentSlide]} />}
+          {isMdScreen && data?.items?.[currentSlide + 1] && <Item className="nextSlide" {...data.items[currentSlide + 1]} />} */}
