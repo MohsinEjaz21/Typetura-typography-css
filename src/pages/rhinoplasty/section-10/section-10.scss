@@ -89,10 +89,13 @@
 
     @include md {
       justify-content: start;
-      // overflow-x: scroll;
       grid-auto-flow: column;
       grid-auto-columns: 80%;
       grid-template-columns: none;
+    }
+
+    @include tn {
+      grid-auto-columns: 100%;
     }
   }
 }

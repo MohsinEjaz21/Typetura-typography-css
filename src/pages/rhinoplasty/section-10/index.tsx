@@ -102,7 +102,7 @@ export function Section10(props) {
     // get current scrolled element
     // get current item from scroll position of items
     if (scrollEl) {
-      const currentItem = Math.round(e.target.scrollLeft / (scrollEl.offsetWidth + columnGapPx)) + 1;
+      const currentItem = Math.round(e.target.scrollLeft / (scrollEl.offsetWidth + columnGapPx));
       console.log(currentItem);
       setCurrentSlide(currentItem);
     }
@@ -141,7 +141,7 @@ export function Section10(props) {
           <img src={currentSlide > 0 ? icons.prevIcon : icons.prevIconDisabled} alt="" />
         </button>
         <button className="btn btn-next" onClick={handleNext}>
-          <img src={currentSlide == data.items.length - 1 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
+          <img src={currentSlide > data.items.length - 2 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
         </button>
       </div>
     </section>

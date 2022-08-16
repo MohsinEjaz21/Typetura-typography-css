@@ -105,7 +105,7 @@ function Item({ title, description, btnText, image, className = "", dataIndex })
 
 
 export function Section09(props) {
-
+  let columnGapPx = 16;
   const screenSize = useWindowSize().innerWidth;
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -123,22 +123,28 @@ export function Section09(props) {
     }
   }, 300);
 
+
   const onScrollItems = (e) => {
-    // console.log(e.target.scrollLeft);
+    // const scrollEl: any = document.querySelector(`.items`);
+    const scrollEl: any = document.querySelector(`.section-09 .item:nth-child(${currentSlide + 1})`);
+
+    console.log({
+      scrollLeft: e.target.scrollLeft,
+      offsetWidth: scrollEl.offsetWidth
+    });
     // get current scrolled element
-    const scrollEl: any = document.querySelector(`.section-09 .items`);
     // get current item from scroll position of items
     if (scrollEl) {
-      const currentItem = Math.round(e.target.scrollLeft / scrollEl.offsetWidth);
-      //console.log(currentItem);
+      const currentItem = Math.round(e.target.scrollLeft / (scrollEl.offsetWidth + columnGapPx));
+      console.log(currentItem);
       setCurrentSlide(currentItem);
     }
   }
+
   const scrollX = (index: number, accumulator) => {
     const currElem = document.querySelector(`.section-09 .item:nth-child(${currentSlide + 1})`);
     const scrollEl = document.querySelector(`.section-09 .items`);
     let size = currElem?.clientWidth;
-    let columnGapPx = 16;
 
     console.log({
       screenSize: screenSize,
@@ -172,7 +178,7 @@ export function Section09(props) {
           <img src={currentSlide > 0 ? icons.prevIcon : icons.prevIconDisabled} alt="" />
         </button>
         <button className="btn btn-next" onClick={handleNext}>
-          <img src={currentSlide == data.items.length - 2 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
+          <img src={currentSlide > data.items.length - 2 ? icons.nextIconDisabled : icons.nextIcon} alt="" />
         </button>
       </div>
     </section >
