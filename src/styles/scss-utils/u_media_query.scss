@@ -28,6 +28,12 @@
   }
 }
 
+@mixin md-lg {
+  @media (max-width: 1024) {
+    @content;
+  }
+}
+
 @mixin ForLaptopsOnly {
   @media (min-width: 768px) and (max-width: 1024px) {
     @content;

@@ -22,6 +22,8 @@ function Rhinoplasty() {
       <Section08 />
       <Section09 />
       <Section10 />
+      {/* <Section11 /> */}
+      {/* <Section12 /> */}
 
     </>
   )

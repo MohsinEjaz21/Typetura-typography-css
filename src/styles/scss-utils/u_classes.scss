@@ -23,6 +23,11 @@
   clip-path: inset(0 -100vmax);
 }
 
+.fill-primary {
+  box-shadow: 0 0 0 100vmax var(--color-primary);
+  clip-path: inset(0 -100vmax);
+}
+
 .text-center {
   text-align: center;
 }

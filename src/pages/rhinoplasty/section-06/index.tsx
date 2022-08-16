@@ -34,7 +34,7 @@ export function Section06(props) {
 
 
   return (
-    <div className="section-06">
+    <section className="section-06">
       <div className="block-1">
         <img className="illustration" src={data.illustration} />
         <h1 className="text1">How is a Rhinoplasty Done?</h1>
@@ -50,7 +50,7 @@ export function Section06(props) {
         </div>
       ))}
 
-    </div>
+    </section>
   );
 }
 

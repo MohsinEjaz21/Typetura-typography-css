@@ -24,6 +24,7 @@
 }
 
 html {
+  width: 100%;
   font-size: 62.5%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -116,6 +117,7 @@ section {
   font-family: var(--font-family-body);
   font-size: 1.5rem;
   max-width: 253px;
+  text-align: center;
   @include xs {
     max-width: none;
   }
