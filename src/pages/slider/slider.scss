@@ -28,6 +28,10 @@
     grid-template-columns: 88px 1fr;
     grid-template-rows: 88px 1fr;
     grid-column-gap: 10px;
+
+    @include xs {
+      padding: 15px;
+    }
   }
 
   .img {
@@ -35,9 +39,11 @@
   }
   .text {
     grid-area: 1 / 2 / 2 / 3;
-    // align-self: center;
+    display: grid;
+    align-items: center;
+    align-content: center; // align-self: center;
     .heading {
-      @extend .h-regular, .color-secondary;
+      @extend .h-small, .color-secondary;
     }
     .subheading {
       @extend .paragraph, .color-primary;

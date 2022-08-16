@@ -8,6 +8,8 @@ import { Section07 } from "./section-07";
 import { Section08 } from "./section-08";
 import { Section09 } from "./section-09";
 import { Section10 } from "./section-10";
+import { Section11 } from "./section-11";
+import { Section12 } from "./section-12";
 
 function Rhinoplasty() {
   return (
@@ -22,8 +24,8 @@ function Rhinoplasty() {
       <Section08 />
       <Section09 />
       <Section10 />
-      {/* <Section11 /> */}
-      {/* <Section12 /> */}
+      <Section11 />
+      <Section12 />
 
     </>
   )
