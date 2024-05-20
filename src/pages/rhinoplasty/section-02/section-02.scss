@@ -1,0 +1,57 @@
+.section-02 {
+  --color-bg-image: #fbabaa;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // background: var(--color-secondary);
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .block-01 {
+    display: grid;
+    align-content: center;
+    margin: 0 auto;
+
+    @include u-block(70%);
+
+    @include md {
+      padding: 50px 0;
+    }
+
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 0.8rem;
+    }
+    .text2 {
+      @extend .h-medium;
+      margin-bottom: 1.6rem;
+    }
+    .text3 {
+      @extend .paragraph;
+      margin-bottom: 6.4rem;
+    }
+    .btn {
+      @extend .btn-secondary-1;
+    }
+  }
+
+  .block-02 {
+    max-height: 872px;
+    max-width: 604px;
+    object-fit: contain;
+
+    @include md {
+      order: 1;
+      max-width: none;
+      max-height: 450px;
+      margin: 0;
+      background: var(--color-bg-image);
+    }
+
+    .image {
+      object-fit: contain;
+    }
+  }
+}

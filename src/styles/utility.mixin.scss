@@ -1,9 +1,0 @@
-@mixin u_button($color, $background, $border) {
-  background: $background;
-  color: $color;
-  border: 2px solid $border;
-  &:hover {
-    background: $color;
-    color: $background;
-  }
-}

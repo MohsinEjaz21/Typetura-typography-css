@@ -1,0 +1,107 @@
+.section-09 {
+  .block-01 {
+    // max-width: 762px;
+
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 4.8rem;
+
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 0.8rem;
+    }
+    .text2 {
+      @extend .h-medium;
+    }
+  }
+
+  .block-02 {
+    @include u-block(90%);
+    margin: 0 auto;
+
+    @include md {
+      width: 100%;
+
+      .item:nth-of-type(1) {
+        // margin-left: -74%;
+      }
+    }
+
+    .items {
+      overflow-x: scroll;
+      display: grid;
+      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+      @include md {
+        grid-auto-flow: column;
+        grid-auto-columns: 80%;
+        grid-template-columns: none;
+        // grid-template-columns: repeat(12, minmax(90%, 1fr));
+      }
+
+      @include tn {
+        grid-auto-columns: 100%;
+      }
+    }
+
+    .item {
+      display: grid;
+      row-gap: 0.5rem;
+      grid-template-rows: 80px auto 1fr;
+
+      @include md {
+        min-width: 100%;
+        padding: 0 30px;
+      }
+
+      @include sm {
+        padding: 0 20px;
+      }
+
+      @include xs {
+        padding: 0 10px;
+      }
+
+      .image {
+        max-width: 83.55px;
+        max-height: 80px;
+      }
+      .text1 {
+        @extend .h-small;
+        margin-bottom: 0.8rem;
+      }
+      .text2 {
+        @extend .paragraph;
+        margin-bottom: 2.5rem;
+      }
+      .btn {
+        @extend .btn-primary-1;
+        margin-bottom: 0.8rem;
+        max-width: none;
+        align-self: end;
+      }
+    }
+  }
+
+  .footer-btns {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 4.8rem;
+    .btn {
+      border: none;
+      outline: none;
+    }
+
+    @include max {
+      display: none;
+    }
+
+    @include md {
+      justify-content: center;
+      display: flex;
+    }
+  }
+}

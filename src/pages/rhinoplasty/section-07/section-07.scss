@@ -1,0 +1,59 @@
+.section-07 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .block-1 {
+    margin: 50px auto;
+    @include u-block(70%);
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 0.8rem;
+    }
+    .text2 {
+      @extend .h-medium;
+      margin-bottom: 1.6rem;
+    }
+    .text3 {
+      @extend .paragraph;
+      margin-bottom: 1.6rem;
+    }
+    .text4 {
+      @extend .h-small;
+      margin-bottom: 0.8rem;
+    }
+    .ul > .li {
+      display: grid;
+      justify-content: start;
+      align-items: start;
+      grid-auto-flow: column;
+      column-gap: 1.6rem;
+      margin-bottom: 1.6rem;
+      .text {
+        @extend .paragraph;
+      }
+    }
+  }
+  .block-2 {
+    margin-top: 60px;
+    max-height: 800px;
+
+    @include md {
+      // percentages will create empty spaces for max-height
+      max-height: 700px;
+      order: -1;
+      margin-top: 0;
+    }
+
+    @include xs {
+      max-height: 90%;
+    }
+
+    .image {
+      object-fit: contain;
+      object-position: top center;
+    }
+  }
+}

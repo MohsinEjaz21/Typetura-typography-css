@@ -1,0 +1,101 @@
+.section-10 {
+  margin: 0 auto;
+
+  .text1 {
+    @extend .h-small, .text-center;
+    color: var(--color-primary);
+    max-width: 564px;
+    margin: 0 auto;
+  }
+  .text2 {
+    @extend .h-medium, .text-center;
+    max-width: 762px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+  }
+
+  .item {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 40px) 1fr;
+    grid-template-rows: 45px 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    @include md {
+      padding: 0 30px;
+    }
+
+    @include sm {
+      padding: 0 20px;
+    }
+
+    @include xs {
+      padding: 0 10px;
+    }
+
+    .div1 {
+      grid-area: 1 / 1 / 2 / 2;
+      @extend .h-small, .color-primary;
+    }
+    .div2 {
+      grid-area: 1 / 2 / 2 / 3;
+      align-self: center;
+      width: 27px;
+      height: 0px;
+      background: #ff5f7e;
+      border: 2px solid #ff5f7e;
+    }
+    .div3 {
+      grid-area: 1 / 3 / 2 / 5;
+      @extend .h-small, .color-primary;
+    }
+    .div4 {
+      align-self: flex-start;
+      grid-area: 2 / 3 / 6 / 5;
+      @extend .paragraph;
+      color: #555555;
+    }
+  }
+
+  .footer-btns {
+    display: flex;
+    gap: 3.2rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 4.8rem;
+    .btn {
+      border: none;
+      outline: none;
+    }
+
+    @include max {
+      display: none;
+    }
+
+    @include md {
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  .items {
+    width: 100%;
+    display: grid;
+    overflow-x: scroll;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 430px));
+
+    @include md {
+      justify-content: start;
+      grid-auto-flow: column;
+      grid-auto-columns: 80%;
+      grid-template-columns: none;
+    }
+
+    @include tn {
+      grid-auto-columns: 100%;
+    }
+  }
+}

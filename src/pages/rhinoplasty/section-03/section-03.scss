@@ -1,0 +1,53 @@
+.section-03 {
+  --color-bg-image: #e3e3e3;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .block-01 {
+    margin: 0 auto;
+    @extend .u-block-1;
+
+    @include md {
+      padding: 50px 0;
+    }
+
+    .text1 {
+      @extend .h-small, .color-primary;
+      margin-bottom: 0.8rem;
+    }
+
+    .text2 {
+      @extend .h-medium;
+      margin-bottom: 1.6rem;
+    }
+
+    .text3 {
+      @extend .paragraph;
+      margin-bottom: 6.4rem;
+    }
+
+    .btn {
+      @extend .btn-secondary-1;
+    }
+  }
+
+  .block-02 {
+    margin: 0 auto;
+    max-height: 797px;
+    max-width: 605px;
+    background: var(--color-bg-image);
+
+    @include md {
+      max-height: 500px;
+      max-width: none;
+      margin: 0;
+    }
+    .image {
+      object-fit: contain;
+    }
+  }
+}
